@@ -1,0 +1,42 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-light slack-bar">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button slack-button" menu-toggle="left" ng-click="preventFocus()"></button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-search"></button>
+        <button class="button button-icon button-clear ion-ios-more" menu-toggle="right"></button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+
+  <ion-side-menu watch-menu side="left" class="slack-menu-left" width="320">
+    <ion-content class="royal-bg">
+
+      <ion-list>
+        <ion-item ion-affix class="item-divider">List of users</ion-item>
+        <ion-item ng-repeat="user in connectedUsers.users" ng-click="callUser(user.pseudo,user.id)" menu-close class="item-channel"><i class="icon icon-status-off ion-android-radio-button-on"></i>{{user.pseudo}}</ion-item>
+      </ion-list>
+
+    </ion-content>
+  </ion-side-menu>
+
+
+  <ion-side-menu watch-menu side="right" width="220">
+
+    <ion-content class="dark-bg">
+      <ion-list>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>
